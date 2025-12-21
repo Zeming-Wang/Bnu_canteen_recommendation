@@ -1,0 +1,31 @@
+/* assets/style.css */
+/* --- Streamlit 自定义样式 --- */
+
+[data-testid="stAppViewContainer"] {
+  background: linear-gradient(135deg, #fef6e4 0%, #fde2e4 50%, #cfe0e8 100%);
+  background-attachment: fixed;
+  font-family: "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: #333333;
+  text-shadow: 1px 1px 2px #ffffffaa;
+}
+
+div.stExpander {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  border: 1px solid #f3d9dc;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+textarea, input {
+  background-color: #fffaf0 !important;
+  border-radius: 8px !important;
+  border: 1px solid #f5c6aa !important;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: #f8cdda; border-radius: 4px; }
