@@ -1,31 +1,125 @@
 /* assets/style.css */
-/* --- Streamlit 自定义样式 --- */
 
+/* --- 全局字体与背景 --- */
 [data-testid="stAppViewContainer"] {
-  background: linear-gradient(135deg, #fef6e4 0%, #fde2e4 50%, #cfe0e8 100%);
-  background-attachment: fixed;
-  font-family: "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #FFFDF9 0%, #FFF5E6 100%) !important;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  color: #4A4A4A;
 }
 
-h1, h2, h3 {
+/* --- 标题样式 --- */
+h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #FF6B6B !important;
   text-align: center;
-  color: #333333;
-  text-shadow: 1px 1px 2px #ffffffaa;
+  margin-bottom: 0.5rem !important;
+  text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
 }
 
+h2, h3 {
+  color: #FF8E53 !important;
+  font-weight: 600 !important;
+}
+
+div[data-testid="stCaptionContainer"] {
+  text-align: center;
+  color: #888888;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* --- 按钮样式优化 --- */
+div.stButton > button {
+  background: linear-gradient(90deg, #FF6B6B 0%, #FF8E53 100%);
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 0.6rem 1.5rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 6px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease !important;
+}
+
+div.stButton > button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+}
+
+div.stButton > button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+}
+
+/* 特定按钮：点赞/点踩 (次级按钮) */
+div[data-testid="column"] button {
+  background: white !important;
+  color: #FF6B6B !important;
+  border: 1px solid #FF6B6B !important;
+  box-shadow: none !important;
+}
+div[data-testid="column"] button:hover {
+  background: #FFF5E6 !important;
+}
+
+/* --- 输入框与选择框 --- */
+.stTextInput > div > div > input,
+.stSelectbox > div > div > div {
+  border-radius: 12px !important;
+  border: 1px solid #FFD1B3 !important;
+  background-color: white !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.stTextInput > div > div > input:focus,
+.stSelectbox > div > div > div:focus-within {
+  border-color: #FF6B6B !important;
+  box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2) !important;
+}
+
+/* --- 卡片 (Expander) 样式 --- */
 div.stExpander {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: white !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 1.5rem !important;
+  transition: transform 0.2s ease;
+}
+
+div.stExpander:hover {
+  transform: translateY(-2px);
+}
+
+div[data-testid="stExpanderDetails"] {
+  border-top: 1px solid #FFF0F5;
+  padding-top: 1rem;
+}
+
+/* --- 数据表格 --- */
+div[data-testid="stDataFrame"] {
+  border: 1px solid #FFD1B3;
   border-radius: 12px;
-  border: 1px solid #f3d9dc;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-textarea, input {
-  background-color: #fffaf0 !important;
-  border-radius: 8px !important;
-  border: 1px solid #f5c6aa !important;
+/* --- 滚动条美化 --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD1B3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF8E53;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-thumb { background: #f8cdda; border-radius: 4px; }
+/* --- 底部版权 --- */
+footer {
+  visibility: hidden;
+}
